@@ -1,9 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mct="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
              x:Class="ChatGPT.MainPage">
 
+    <ContentPage.Behaviors>
+        <mct:StatusBarBehavior StatusBarColor="#f7f7f8"  StatusBarStyle="DarkContent"/>
+    </ContentPage.Behaviors>
+
     <Grid>
-        <WebView Source="https://chat.openai.com/"/>
+        <WebView x:Name="webView" Source="https://chat.openai.com/" Navigated="webView_Navigated"/>
     </Grid>
 </ContentPage>
